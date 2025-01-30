@@ -60,6 +60,7 @@ import GetAllDataPage from './pages/GetAllDataPage';
 import ProductList from './pages/ProductList';
 import AddProduct from './pages/AddProduct';
 import EditProduct from './pages/EditProduct';
+import OrdersPage from './pages/Orderspage';
 
 const ProtectedRoute = ({ element }) => {
   const user = JSON.parse(localStorage.getItem('user'));
@@ -96,7 +97,7 @@ const App = () => {
         <Route path="/admin/products" element={<ProtectedRoute element={<ProductList />} />} />
         <Route path="/admin/add-product" element={<ProtectedRoute element={<AddProduct />} />} />
         <Route path="/admin/edit-product/:id" element={<ProtectedRoute element={<EditProduct />} />} />
-        {/* <Route path="/orders" element={<ProtectedRoute element={<OrderPa />} />} /> */}
+        <Route path="/orders" element={<ProtectedRoute element={<OrdersPage />} />} />
         
         {/* Fallback route */}
         <Route path="*" element={<div>404 - Page Not Found</div>} />
