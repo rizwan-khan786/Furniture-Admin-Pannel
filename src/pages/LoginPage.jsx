@@ -24,36 +24,39 @@ const LoginPage = () => {
   };
 
   return (
-    <Container className="mt-5">
-      <h2>Login</h2>
-      <Form onSubmit={handleLogin}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Enter email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </Form.Group>
+    <Container className="mt-5" style={{ maxWidth: '400px', padding: '20px', backgroundColor: '#fff', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+  <h2 className="text-center mb-4">Login</h2>
+  <Form onSubmit={handleLogin}>
+    <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Label>Email address</Form.Label>
+      <Form.Control
+        type="email"
+        placeholder="Enter email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+      />
+    </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Form.Group>
+    <Form.Group className="mb-3" controlId="formBasicPassword">
+      <Form.Label>Password</Form.Label>
+      <Form.Control
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        required
+      />
+    </Form.Group>
 
-        {error && <div className="text-danger mb-3">{error}</div>}
+    {error && <div className="text-danger mb-3">{error}</div>}
 
-        <Button variant="primary" type="submit">
-          Login
-        </Button>
-      </Form>
-    </Container>
+    <Button variant="primary" type="submit" style={{ width: '100%' }}>
+      Login
+    </Button>
+  </Form>
+</Container>
+
   );
 };
 
